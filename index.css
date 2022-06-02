@@ -1,0 +1,264 @@
+@font-face {
+    font-family: karantina;
+    src: url("assets/font/Karantina-Light.ttf");
+    font-weight: 100;
+}
+@font-face {
+    font-family: karantina-bold;
+    src: url("assets/font/Karantina-Bold.ttf");
+}
+
+@font-face {
+    font-family: Assistant;
+    src: url("assets/font/Assistant-Light.ttf");
+}
+
+* {
+    font-family: Assistant;
+    /* overflow: hidden !important; */
+}
+
+body {
+    font-family: Assistant;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-image: url(assets/media/locked_background_1.svg);
+    /* background-image: url(assets/media/phone_background_1.svg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    direction: rtl;
+    color: white;
+    overflow: hidden;
+}
+
+/* טוען */
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f4f4f45d;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.loader > img {
+    width: 50vw;
+}
+
+.loader.fade {
+    animation: fadeOut 1s 2s forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.logo {
+    width: 12vw;
+    /* height: 7vh; */
+}
+
+.header {
+    top: 1.2vh;
+    position: absolute;
+    width: 90%;
+    height: 12vh;
+    margin: 0px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    right: 5%;
+}
+
+
+.div-body, .body-odot {
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+
+/* אודות */
+.odot-logo {
+    width: 6vw;
+}
+
+.div-odot {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.p-odot {
+    margin: 0.5em;
+}
+
+.div-p-odot {
+    font-family: Assistant;
+    font-size: 1.2em;
+}
+
+.till-logo {
+    width: 23vW;
+    height: auto;
+}
+
+.div-middle {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 0em;
+    margin-top: 2em;
+    justify-content: space-around;
+}
+
+.back-button {
+    position: absolute;
+    right: 1vh;
+    bottom: 12vh;
+    width: 29vw;
+}
+
+/* דף פתיחה */
+
+.div-fingerprint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    bottom: 25vh;
+}
+
+.fingerprint {
+    width: 19vw;
+}
+
+.p-fingerprint {
+    font-family: karantina-bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* question-page */
+
+.question-page {
+    display: none;
+    width: 100vw;
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-question {
+    width: 90vw;
+    /* height: 343px; */
+    height: inherit;
+    display: flex;
+    background-image: url(assets/media/moon.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-question {
+    font-family: karantina-bold;
+    color: black;
+    font-size: 2.5em;
+    margin: 0.3em;
+}
+
+.input-question {
+    background-color: black;
+    color: white;
+    border-radius: 11px;
+    font-size: 1.1em;
+}
+
+::placeholder {
+    color: white;
+}
+
+/* page-notes */
+
+.page-notes {
+    display: none;
+    width: 100vw;
+    height: 80vh;
+}
+
+.start-notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    width: 85vw;
+    margin: 1em;
+}
+
+.background-img-min-notes {
+    width: 100%;
+    height: 100%;
+}
+
+.title-notes {
+    width: 84vw;
+    position: absolute;
+    font-family: karantina;
+    color: black;
+    font-size: 2em;
+    margin: 0;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8.5vh;
+}
+
+.notes {
+    width: 80vw;
+    height: 59vh;
+    position: absolute;
+    top: 3vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("...");
+}
+
+.div-open-notes {
+    display: none;
+    justify-content: center;
+}
+
+.back-button-notes {
+    position: absolute;
+    right: 4vh;
+    bottom: 7vh;
+    width: 13vw;
+}
+
+.p-notes {
+    font-size: 1.2em;
+    margin: 1em;
+    color: black;
+}
