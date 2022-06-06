@@ -85,7 +85,9 @@ let inputAnswer = (event) => {
             }, 2000)
     } else if (arrMultipleQuestions[nMultipleCurrentQuestion][`ans`].length === strTextInput.length) {
         document.querySelector(`.input-question`).style.backgroundColor = "red";
-    } 
+    } else if (strTextInput.length === 0) {
+        document.querySelector(`.input-question`).style.backgroundColor = "black";
+    }
 }
 
 let questionsEnd = () => {
