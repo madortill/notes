@@ -19,8 +19,10 @@ let odot = () => {
     document.querySelector(`.${strLocation}`).style.display = "none";
     document.querySelector(`.div-odot`).style.display = "block";  
     document.querySelector(`.div-body`).style.overflow = "hidden";
-    document.querySelector(`.odot-logo`).style.display = "none";  
-    document.querySelector(`body`).style.backgroundImage = "url(assets/media/phone_background_1.svg)";
+    document.querySelector(`.odot-logo`).style.display = "none";
+    if (strLocation === "start-page") {
+        document.querySelector(`body`).style.backgroundImage = "url(assets/media/phone_background_1.svg)";
+    }  
     document.querySelector(`#back-button-odot`).addEventListener("click", () => {
         document.querySelector(`.${strLocation}`).style.display = "block";
         if (strLocation === "start-page") {
@@ -35,6 +37,7 @@ let odot = () => {
 let fingerprint = () => {
     document.querySelector(".fingerprint").src = "assets/media/red_fingerprint.svg";
     document.querySelector(".p-fingerprint").innerHTML = `טביעת אצבע שגויה <br> ענה על שאלות זיהוי בשביל לפתוח את הטלפון`;
+    document.querySelector(".fingerprint").classList.add("fingerprint-shake");
     setTimeout(switchToQuestionPage, 3000);
 }
 
@@ -64,7 +67,6 @@ let addContentToQuestion = () => {
 
 let inputAnswer = (event) => {
     strTextInput = event.target.value;
-    console.log(strTextInput);
     if (strTextInput === arrMultipleQuestions[nMultipleCurrentQuestion][`ans`]) {
         document.querySelector(`.input-question`).style.backgroundColor = "green";
         document.querySelector(`.input-question`).disabled = true;
@@ -105,8 +107,9 @@ let notesPage = () => {
         El("p",{cls: `title-notes`, id: `${i}` , listeners : {click : openNotes}}, DATA.notes[i - 1][`title`]),            
         El("img",{attributes: {class: `background-img-min-notes`, src : `assets/media/${DATA.notes[i - 1][`backgroundImage`]}`, alt : `background`}},),
         );
-        document.querySelector(`.start-notes`).append(item)
+        document.querySelector(`.start-notes`).append(item);
     }
+    document.querySelector(`.div-body`).style.overflow = "scroll";
 }
 
 let openNotes = (event) => {
@@ -120,7 +123,7 @@ let openNotes = (event) => {
     document.querySelector(`.back-button-notes`).addEventListener("click", () => {
         document.querySelector(".div-open-notes").style.display = "none";
         document.querySelector(".start-notes").style.display = "flex";
-        document.querySelector(`.div-body`).style.overflow = "hidden";
+        // document.querySelector(`.div-body`).style.overflow = "hidden";
     })
 }
 
