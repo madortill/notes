@@ -7,6 +7,7 @@ const AMOUNT_OF_QUESTION = 5; // how many questions we want out of the array
 
 let strLocation = "start-page" //המשתנה שומר את המקום של המשתמש ומחזיר אותו לשם בסגירת האודות
 let strTextInput = ""
+let bFirst = true;
 
 window.addEventListener("load", () => {
     document.querySelector(".loader").classList.add("fade");
@@ -80,7 +81,7 @@ let inputAnswer = (event) => {
                     document.querySelector(`.input-question`).value = "";
                     addContentToQuestion();
                 } else {
-                    questionsEnd();
+                    endQuestions();
                 }
             }, 2000)
     } else if (arrMultipleQuestions[nMultipleCurrentQuestion][`ans`].length === strTextInput.length) {
@@ -90,20 +91,57 @@ let inputAnswer = (event) => {
     }
 }
 
-let questionsEnd = () => {
+let endQuestions = () => {
     document.querySelector(`.question-page`).classList.add(`animate__backOutUp`);
     document.querySelector(`.question-page`).addEventListener("animationend", () => {
-        document.querySelector(`.page-notes`).style.display = "block";
+        document.querySelector(`.page-home`).style.display = "block";
         document.querySelector(`.question-page`).style.display = "none";
-        document.querySelector(`body`).style.backgroundImage = "url(assets/media/gradient_screensaver.svg)";
-        document.querySelector(`.page-notes`).classList.add(`animate__pulse`);
+        document.querySelector(`body`).style.backgroundImage = "url(assets/media/background1.svg)";
+        document.querySelector(`.page-home`).classList.add(`animate__pulse`);
         document.querySelector(`.question-page`).classList.remove(`animate__backOutUp`);
-        notesPage();
+        // notesPage();
+        homePage();
     });
 }
 
+let homePage = () => {
+    strLocation = "page-home";
+    document.querySelector(`.back-button`).style.bottom = "26vh";
+    document.querySelector(`.header`).style.display = "none";
+    for (let i = 1; i < 8; i++) {
+        let item = El("div", {cls: `application`},
+        El("img",{attributes: {class: `application-img`,id: `application${i}`, src : `assets/media/application${i}.svg`, alt : `application`}, listeners : {click : openApplication}},)
+        );
+        document.querySelector(`.div-application`).append(item);
+    }
+}
+
+let openApplication = (event) => {
+    let nApplication;
+    nApplication = event.target;
+    if(nApplication.id === "application4") {
+        notesPage();
+    } else {
+        document.querySelector(`#${nApplication.id}`).style.cssText = "filter: grayscale(100%);";
+        document.querySelector(`#${nApplication.id}`).removeEventListener("click", openApplication);
+        if(bFirst) {
+            document.querySelector(`.div-mistake`).style.display = "flex";
+            document.querySelector(`.div-black`).style.display = "block";
+            setTimeout(() => {
+                document.querySelector(`.div-mistake`).style.display = "none";
+                document.querySelector(`.div-black`).style.display = "none";
+            }, 2500) 
+            bFirst = false;  
+        }
+    }
+}
+
 let notesPage = () => {
+    document.querySelector(`.page-home`).style.display = "none";
+    document.querySelector(`.page-notes`).style.display = "block";
+    document.querySelector(`.header`).style.display = "flex";
     strLocation = "page-notes";
+    document.querySelector(`body`).style.backgroundImage = "url(assets/media/background3.svg)";
     for (let i = 1; i < DATA.notes.length; i++) {
         let item = El("div", {cls: `banner`},
         El("p",{cls: `title-notes`, id: `${i}` , listeners : {click : openNotes}}, DATA.notes[i - 1][`title`]),            
@@ -119,7 +157,7 @@ let openNotes = (event) => {
     nNotes = event.target.id;
     document.querySelector(".div-open-notes").style.display = "flex";
     document.querySelector(".start-notes").style.display = "none";
-    document.querySelector(`.notes`).style.backgroundImage = `url(assets/media/${DATA.notes[nNotes - 1][`backgroundBigImage`]})`;
+    document.querySelector(`.notes`).style.backgroundImage = `url(assets/media/${DATA.notes[nNotes - 1][`backgroundBig`]})`;
     document.querySelector(`.p-notes`).innerHTML = DATA.notes[nNotes - 1][`text`];
     document.querySelector(`.div-body`).style.overflow = "scroll";
     document.querySelector(`.back-button-notes`).addEventListener("click", () => {
