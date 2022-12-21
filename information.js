@@ -25,62 +25,62 @@ const DATA = {
         {
             title : "כותרת",
             text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_blue.svg",
-            backgroundBigImage : "open_note_blue.svg"
+            backgroundImage : "blue.svg",
+            backgroundBig : "blue_big.svg",
+        },
+        {
+            title : "כותרת",
+            text : "בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה ",
+            backgroundImage : "green.svg",
+            backgroundBig : "green_big.svg",
         },
         {
             title : "כותרת",
             text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_green.svg",
-            backgroundBigImage : "open_note_green.svg"
-        },
-        {
-            title : "כותרת",
-            text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_yellow.svg",
-            backgroundBigImage : "open_note_yellow.svg"
-        },
-        {
-            title : "כותרת",
-            text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "pink.svg",
-            backgroundBigImage : "open_note_pink.svg"
-        },
-        {
-            title : "כותרת",
-            text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_purple.svg",
-            backgroundBigImage : "open_note_purple.svg"
-        },
-        {
-            title : "כותרת",
-            text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_blue.svg",
-            backgroundBigImage : "open_note_blue.svg"
-        },
-        {
-            title : "כותרת",
-            text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_green.svg",
-            backgroundBigImage : "open_note_green.svg"
-        },
-        {
-            title : "כותרת",
-            text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_yellow.svg",
-            backgroundBigImage : "open_note_yellow.svg"
+            backgroundImage : "yellow.svg",
+            backgroundBig : "yellow_big.svg",
         },
         {
             title : "כותרת",
             text : "בלה בלה בלה בלה בלה",
             backgroundImage : "pink.svg",
-            backgroundBigImage : "open_note_pink.svg"
+            backgroundBig : "pink_big.svg",
         },
         {
             title : "כותרת",
             text : "בלה בלה בלה בלה בלה",
-            backgroundImage : "closed_note_purple.svg",
-            backgroundBigImage : "open_note_purple.svg"
+            backgroundImage : "blue.svg",
+            backgroundBig : "blue_big.svg",
+        },
+        {
+            title : "כותרת",
+            text : "בלה בלה בלה בלה בלה",
+            backgroundImage : "green.svg",
+            backgroundBig : "green_big.svg",
+        },
+        {
+            title : "כותרת",
+            text : "בלה בלה בלה בלה בלה",
+            backgroundImage : "yellow.svg",
+            backgroundBig : "yellow_big.svg",
+        },
+        {
+            title : "כותרת",
+            text : "בלה בלה בלה בלה בלה",
+            backgroundImage : "pink.svg",
+            backgroundBig : "pink_big.svg",
+        },
+        {
+            title : "כותרת",
+            text : "בלה בלה בלה בלה בלה",
+            backgroundImage : "blue.svg",
+            backgroundBig : "blue_big.svg",
+        },
+        {
+            title : "כותרת",
+            text : "בלה בלה בלה בלה בלה",
+            backgroundImage : "green.svg",
+            backgroundBig : "green_big.svg",
         },
     ]
 };
